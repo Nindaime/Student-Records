@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="549.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AutoResultProcessing.LoginController">
+  <children>
+    <AnchorPane id="anchorPane2" fx:id="container" onMouseClicked="#requestfocus" onMouseDragged="#pick" onMousePressed="#determine" onMouseReleased="#drop" prefHeight="505.0" prefWidth="549.0" styleClass="top-segment" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
+              <children>
+                <TextField id="textField1" fx:id="userId" alignment="CENTER" layoutY="72.0" prefHeight="45.0" prefWidth="459.0" promptText="Username" style="-fx-background-radius: 15;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Signika" size="14.0" />
+                           </font></TextField>
+                <PasswordField id="passwordField1" fx:id="password" alignment="CENTER" layoutX="10.0" layoutY="143.0" prefHeight="45.0" prefWidth="415.0" promptText="Password" style="-fx-background-radius: 15;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Arimo" size="16.0" />
+                           </font></PasswordField>
+                <ImageView id="app-login-logo" fitHeight="77.0" fitWidth="275.0" layoutX="97.0" layoutY="-24.0">
+                  <image>
+                    <Image preserveRatio="true" smooth="true" url="@img/LoginLogo.png" />
+                  </image>
+                </ImageView>
+              </children>
+            </AnchorPane>
+          </children>
+        </VBox>
+            <Button id="no-color" fx:id="btnClose" cancelButton="true" layoutX="499.0" layoutY="4.0" mnemonicParsing="false" onAction="#closeButtonAction" onMouseEntered="#hover_in" onMouseExited="#hover_out" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView id="close-button" fitHeight="28.0" fitWidth="66.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@img/closeImage.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust saturation="-1.0" />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+      </children>
+    </AnchorPane>
+    <Button id="button1" fx:id="login" defaultButton="true" onAction="#processLogin" prefHeight="70.0" prefWidth="400.0" text="Login" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+    <HBox id="hBox1" alignment="CENTER" prefHeight="25.0" prefWidth="418.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="41.0">
+      <children>
+        <Label id="label2" fx:id="errorMessage" />
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@css/Login.css" />
+  </stylesheets>
+</AnchorPane>

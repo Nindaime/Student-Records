@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="courseCode" prefHeight="505.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AutoResultProcessing.ViewStudentByCoursesController">
+   <children>
+      <Pane fx:id="container" onMouseDragged="#pick" onMousePressed="#determine" onMouseReleased="#drop" prefHeight="113.0" prefWidth="549.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <Label layoutX="141.0" layoutY="26.0" style="-fx-text-fill: #008CBA;" text="View Your Students" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB" size="33.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <ComboBox fx:id="menuSelection" layoutX="38.0" layoutY="75.0" onMouseEntered="#menuHoverIn" onMouseExited="#menuHoverOut" prefHeight="27.0" prefWidth="344.0" promptText="Select Course" style="-fx-border-width: 1; -fx-background-color: gainsboro; -fx-border-color: #008CBA;" visibleRowCount="15">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <Button id="no-color" fx:id="closeButton" cancelButton="true" layoutX="505.0" layoutY="3.0" mnemonicParsing="false" onAction="#closeButtonAction" onMouseEntered="#hover_in" onMouseExited="#hover_out" prefHeight="36.0" prefWidth="0.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView id="close-button" fitHeight="28.0" fitWidth="66.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" styleClass="no-margin">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@img/closeImage.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" layoutX="9.0" layoutY="9.0" mnemonicParsing="false" onAction="#goToMainScreen" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-background-color: #008CBA; -fx-border-radius: 100; -fx-border-width: 3; -fx-border-insets: -1; -fx-padding: 0;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="13.0" layoutX="17.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/back-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Go Back To View Results">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Button>
+            <ComboBox fx:id="sessionSelection" layoutX="389.0" layoutY="75.0" onMouseEntered="#menuHoverIn" onMouseExited="#menuHoverOut" prefHeight="27.0" prefWidth="120.0" promptText="Select Session" style="-fx-border-width: 1; -fx-background-color: gainsboro; -fx-border-color: #008CBA;" visibleRowCount="15">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Pane>
+    <AnchorPane layoutY="113.0" minHeight="0.0" minWidth="0.0" prefHeight="390.0" prefWidth="549.0">
+         <children>
+            <TableView fx:id="table" editable="true" layoutX="7.0" layoutY="20.0" prefHeight="247.0" prefWidth="535.0">
+              <columns>
+                <TableColumn fx:id="matricNoColumn" editable="false" style="-fx-alignment: center;" text="MatricNo" />
+                  <TableColumn fx:id="departmentColumn" editable="false" prefWidth="140.0" style="-fx-alignment: center;" text="Department" />
+                  <TableColumn fx:id="fullNameColumn" editable="false" prefWidth="241.0" style="-fx-alignment: center;" text="FullName" />
+                  <TableColumn fx:id="scoreColumn" minWidth="2.0" prefWidth="73.0" style="-fx-alignment: center;" text="Score" />
+              </columns>
+            </TableView>
+            <Button fx:id="commitButton" layoutX="352.0" layoutY="336.0" mnemonicParsing="false" onMouseEntered="#hoverIn" onMouseExited="#hoverOut" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: #008CBA; -fx-border-color: #008CBA; -fx-border-width: 3;" text="Save">
+               <font>
+                  <Font name="Arimo" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="addButton" layoutX="60.0" layoutY="336.0" mnemonicParsing="false" onAction="#addStudentResult" onMouseEntered="#hoverIn" onMouseExited="#hoverOut" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: #008CBA; -fx-border-color: #008CBA; -fx-border-width: 3;" text="Add Result">
+               <font>
+                  <Font name="Arimo" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="addImage" fitHeight="45.0" fitWidth="55.0" layoutX="186.0" layoutY="334.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/commit.fw.png" />
+               </image>
+               <effect>
+                  <DropShadow color="#264626" height="15.0" radius="7.0" width="15.0" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="commitImage" fitHeight="45.0" fitWidth="55.0" layoutX="477.0" layoutY="334.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow color="#264626" height="15.0" radius="7.0" width="15.0" />
+               </effect>
+               <image>
+                  <Image url="@img/commit.fw.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="studentMatric" alignment="CENTER" layoutX="14.0" layoutY="285.0" prefHeight="35.0" prefWidth="196.0" promptText="Enter Valid Matric No">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="studentScore" alignment="CENTER" layoutX="216.0" layoutY="286.0" prefHeight="35.0" prefWidth="50.0" promptText="Score">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
